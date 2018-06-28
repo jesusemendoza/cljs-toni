@@ -1,6 +1,6 @@
 (defproject cljs-toni "0.1.0-SNAPSHOT"
 
-  :description "FIXME: write description"
+  :description "Ethereum Capital Gains Calculator"
 
   :url "http://example.com/FIXME"
 
@@ -11,8 +11,8 @@
 
   :cljsbuild {:builds [{
                       :id "dev"
-                      :source-paths ["src"]
-                      ;:figwheel true
+                      :source-paths ["src/cljs_toni"]
+                      :figwheel true
                       :compiler
                           {
                            :optimizations :none
@@ -33,10 +33,16 @@
                        ;     :source-map true}}
                        ]}
 
-  :plugins [[lein-cljsbuild "1.1.7"]]
-            ;[lein-figwheel "0.5.16"]
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-figwheel "0.5.16"]]
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :figwheel {
+             :css-dirs ["resources/public/stylesheets"]
+             :nrepl-port 7001
+             }
+
+  :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.339"]
                  [reagent "0.8.1"]
+                 [org.clojure/core.async "0.4.474"]
                  ])
