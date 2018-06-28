@@ -1,6 +1,7 @@
 (ns cljs-toni.core)
 
 (defn say-hello []
-  (println "Hello....."))
+  #?(:clj (println "Hello.....")
+     :cljs (js/console.log "Hello from javascript")))
 
 (say-hello)

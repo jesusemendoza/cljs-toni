@@ -4,12 +4,13 @@
   </head>
 
   <body>
-    <div id="root">
+    <div id="cljs-target">
     </div>
 
     <div id="footer-javascripts">
-      <script src="./javascripts/cljs-dev/goog/base.js"></script>
+      <script type="text/javascript" src="./javascripts/cljs-dev/goog/base.js"></script>
       <script type="text/javascript" src="./javascripts/dev.js"></script>
+      <script type="text/javascript">goog.require('cljs_toni.core')</script>
     </div>
   </body>
 
